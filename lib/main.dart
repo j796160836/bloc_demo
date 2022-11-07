@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void initState() {
     super.initState();
-    _myBloc = MyBloc(scoreRepo: ScoreRepository());
+    _myBloc = MyBloc(scoreRepo: ScoreRepositoryImpl());
   }
 
   @override
