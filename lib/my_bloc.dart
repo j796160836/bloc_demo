@@ -4,7 +4,7 @@ import 'package:bloc_demo/score_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MyBloc extends Bloc<MyBlocEvent, MyBlocState> {
-  ScoreRepository scoreRepo;
+  ScoreRepositoryInterface scoreRepo;
 
   MyBloc({required this.scoreRepo}) : super(InitState()) {
     on<GetScoringDataEvent>((event, emit) async {

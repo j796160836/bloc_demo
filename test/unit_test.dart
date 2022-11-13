@@ -5,10 +5,10 @@ import 'package:bloc_demo/score_repository.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-class MockScoreRepository implements ScoreRepository {
+class StubScoreRepository implements ScoreRepositoryInterface {
   int score;
 
-  MockScoreRepository({required this.score});
+  StubScoreRepository({required this.score});
 
   @override
   Future<int> getScore() async {
@@ -20,7 +20,7 @@ void main() {
   blocTest<MyBloc, MyBlocState>(
     'emits [SmileState] when GetScoringDataEvent is added',
     build: () {
-      var scoreRepo = MockScoreRepository(score: 60);
+      var scoreRepo = StubScoreRepository(score: 60);
       return MyBloc(scoreRepo: scoreRepo);
     },
     act: (cubit) => cubit.add(GetScoringDataEvent()),
@@ -31,7 +31,7 @@ void main() {
   blocTest<MyBloc, MyBlocState>(
     'emits [CryingState] when GetScoringDataEvent is added',
     build: () {
-      var scoreRepo = MockScoreRepository(score: 40);
+      var scoreRepo = StubScoreRepository(score: 40);
       return MyBloc(scoreRepo: scoreRepo);
     },
     act: (cubit) => cubit.add(GetScoringDataEvent()),

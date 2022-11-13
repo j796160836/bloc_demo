@@ -37,9 +37,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   late MyBloc _myBloc;
 
+  @override
   void initState() {
     super.initState();
-    _myBloc = MyBloc(scoreRepo: ScoreRepositoryImpl());
+    _myBloc = MyBloc(scoreRepo: ScoreRepository());
   }
 
   @override
