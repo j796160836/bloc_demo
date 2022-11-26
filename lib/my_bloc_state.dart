@@ -11,4 +11,7 @@ class SmileState extends MyBlocState {}
 class CryingState extends MyBlocState {}
 
 // 錯誤狀態
-class ErrorState extends MyBlocState {}
+class ErrorState extends MyBlocState {
+  Error error;
+  ErrorState(this.error);
+}
