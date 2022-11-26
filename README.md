@@ -1,6 +1,6 @@
 # bloc_demo
 
-A new Flutter project.
+A demo about bloc pattern with some emoji.
 
 ## Getting Started
 
